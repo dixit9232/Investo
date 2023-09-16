@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:investo/App_Screen/news_list.dart';
 import 'package:investo/App_Screen/screen_1.dart';
 import 'package:page_transition/page_transition.dart';
 

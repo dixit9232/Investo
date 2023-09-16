@@ -82,30 +82,36 @@ async {
                 ),
                 Text(
                   "Verification",
-                  style: Theme.of(context).textTheme.titleMedium,
+                  style: Theme.of(context).textTheme.titleMedium!.copyWith(fontSize: 25),
                 )
               ]),
             ),
             Expanded(
               child: Row(children: [
-                Text(
-                  "Enter your code",
-                  style: Theme.of(context)
-                      .textTheme
-                      .displayLarge!
-                      .copyWith(fontSize: 40),
+                Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: Text(
+                    "Enter your code",
+                    style: Theme.of(context)
+                        .textTheme
+                        .displayLarge!
+                        .copyWith(fontSize: 35),
+                  ),
                 ),
               ]),
             ),
             Expanded(
               child: Row(
                 children: [
-                  Text(
-                    "Please type the code we sent to",
-                    style: Theme.of(context)
-                        .textTheme
-                        .titleMedium!
-                        .copyWith(fontWeight: FontWeight.normal, fontSize: 20),
+                  Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: Text(
+                      "Please type the code we sent to",
+                      style: Theme.of(context)
+                          .textTheme
+                          .titleMedium!
+                          .copyWith(fontWeight: FontWeight.normal, fontSize: 20),
+                    ),
                   ),
                 ],
               ),
@@ -113,10 +119,13 @@ async {
             Expanded(
               child: Row(
                 children: [
-                  Text(
-                    "+91 ${OnBordingScreen.mobile_number!["number"]}",
-                    style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                        color: Colors.teal, fontWeight: FontWeight.w900),
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Text(
+                      "+91 ${OnBordingScreen.mobile_number!["number"]}",
+                      style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                          color: Colors.teal, fontWeight: FontWeight.w900),
+                    ),
                   )
                 ],
               ),
@@ -291,7 +300,7 @@ async {
                       }
                     },
                     style: ButtonStyle(
-                        fixedSize: MaterialStatePropertyAll(Size(180, 60)),
+                        fixedSize: MaterialStatePropertyAll(Size(200, 50)),
                         shape: MaterialStatePropertyAll(RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10))),
                         backgroundColor:

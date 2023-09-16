@@ -78,7 +78,7 @@ class _LoginState extends State<Login> {
                     style: Theme.of(context)
                         .textTheme
                         .titleMedium!
-                        .copyWith(fontSize: 40),
+                        .copyWith(fontSize: 35),
                   ),
                 ],
               ),

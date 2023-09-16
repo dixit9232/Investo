@@ -133,7 +133,7 @@ class _Step1State extends State<Step1> {
                 ),
                 Text(
                   "Step 1",
-                  style: Theme.of(context).textTheme.titleMedium,
+                  style: Theme.of(context).textTheme.titleMedium!.copyWith(fontSize: 25),
                 ),
               ],
             ),
@@ -146,7 +146,7 @@ class _Step1State extends State<Step1> {
                     style: Theme.of(context)
                         .textTheme
                         .displayLarge!
-                        .copyWith(fontSize: 45),
+                        .copyWith(fontSize: 35),
                   ),
                 ),
               ],
@@ -163,6 +163,7 @@ eyewear, jwellery or any other things.""",
                 ),
               ],
             ),
+
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -179,6 +180,7 @@ eyewear, jwellery or any other things.""",
                 ),
               ],
             ),
+            SizedBox(height: 100,),
             ElevatedButton(
                 style: ButtonStyle(
                     fixedSize: MaterialStatePropertyAll(Size(350, 50)),
@@ -197,6 +199,7 @@ eyewear, jwellery or any other things.""",
                       .titleMedium!
                       .copyWith(fontWeight: FontWeight.normal, fontSize: 25),
                 )),
+            SizedBox(height: 30),
             OutlinedButton(
                 style: ButtonStyle(
                     fixedSize: MaterialStatePropertyAll(Size(350, 50)),
@@ -213,32 +216,38 @@ eyewear, jwellery or any other things.""",
                       .titleMedium!
                       .copyWith(fontWeight: FontWeight.normal, fontSize: 25),
                 )),
-            ElevatedButton(
-                style: ButtonStyle(
-                    fixedSize: MaterialStatePropertyAll(Size(350, 50)),
-                    shape: MaterialStatePropertyAll(RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10))),
-                    backgroundColor: (image_path == null)
-                        ? MaterialStatePropertyAll(Color(0x2ca6a5ef))
-                        : MaterialStatePropertyAll(Color(0xffA6A5EF))),
-                onPressed: (image_path != null)
-                    ? () {
-                        Navigator.pushReplacement(
-                            context,
-                            PageTransition(
-                                duration: Duration(milliseconds: 500),
-                                child: Confirm(image_path),
-                                type: PageTransitionType.fade));
-                      }
-                    : null,
-                child: Text(
-                  "Next",
-                  style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                      fontWeight: FontWeight.normal,
-                      color:
-                          (image_path == null) ? Colors.white54 : Colors.white,
-                      fontSize: 25),
-                )),
+            Expanded(
+              child: Row(mainAxisAlignment: MainAxisAlignment.center,crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  ElevatedButton(
+                      style: ButtonStyle(
+                          fixedSize: MaterialStatePropertyAll(Size(350, 50)),
+                          shape: MaterialStatePropertyAll(RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10))),
+                          backgroundColor: (image_path == null)
+                              ? MaterialStatePropertyAll(Color(0x2ca6a5ef))
+                              : MaterialStatePropertyAll(Color(0xffA6A5EF))),
+                      onPressed: (image_path != null)
+                          ? () {
+                              Navigator.pushReplacement(
+                                  context,
+                                  PageTransition(
+                                      duration: Duration(milliseconds: 500),
+                                      child: Confirm(image_path),
+                                      type: PageTransitionType.fade));
+                            }
+                          : null,
+                      child: Text(
+                        "Next",
+                        style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                            fontWeight: FontWeight.normal,
+                            color:
+                                (image_path == null) ? Colors.white54 : Colors.white,
+                            fontSize: 25),
+                      )),
+                ],
+              ),
+            ),
             SizedBox(height: 30),
           ],
         ),

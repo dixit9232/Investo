@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
-import 'package:investo/App_Screen/Chart_page.dart';
 import 'package:investo/App_Screen/stock_mutual_List.dart';
 import 'package:investo/main.dart';
-import 'package:page_transition/page_transition.dart';
-import 'package:syncfusion_flutter_charts/charts.dart';
 
 class Portfolio extends StatefulWidget {
   const Portfolio({super.key});
@@ -77,11 +73,11 @@ class _PortfolioState extends State<Portfolio> {
                           height: 15.5,
                         ),
                         Text(
-                          "\$4,409.98",
+                          "\$ 4,409.98",
                           style: Theme.of(context)
                               .textTheme
                               .titleMedium!
-                              .copyWith(fontSize: 50),
+                              .copyWith(fontSize: 40),
                         ),
                         SizedBox(
                           height: 15.5,
@@ -91,7 +87,7 @@ class _PortfolioState extends State<Portfolio> {
                           style: Theme.of(context)
                               .textTheme
                               .titleMedium!
-                              .copyWith(fontSize: 25),
+                              .copyWith(fontSize: 22),
                         )
                       ]),
                 ),
@@ -105,7 +101,7 @@ class _PortfolioState extends State<Portfolio> {
                       style: Theme.of(context)
                           .textTheme
                           .titleMedium!
-                          .copyWith(fontSize: 25),
+                          .copyWith(fontSize: 24),
                     ),
                   ),
                 ],

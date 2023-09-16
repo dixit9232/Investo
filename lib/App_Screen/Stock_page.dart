@@ -58,7 +58,7 @@ class _StocksState extends State<Stocks> {
                                 .textTheme
                                 .titleMedium!
                                 .copyWith(
-                                fontSize: 30,
+                                fontSize: 27,
                                 fontWeight: FontWeight.normal),
                           ),
                         ),
@@ -380,7 +380,7 @@ class _StocksState extends State<Stocks> {
                           style: Theme
                               .of(context)
                               .textTheme
-                              .titleMedium,
+                              .titleMedium!.copyWith(fontSize: 25),
                         ),
                         TextButton(
                             style: ButtonStyle(

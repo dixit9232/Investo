@@ -17,11 +17,11 @@ class _KYC_DoneState extends State<KYC_Done> {
       backgroundColor: Theme.of(context).primaryColor,
       body: SafeArea(
           child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          SizedBox(height: 150),
+          SizedBox(height: 250),
           Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
                 height: 200,
@@ -47,30 +47,33 @@ Please continue to explore investovo""",
             style: Theme.of(context).textTheme.titleSmall,
             textAlign: TextAlign.center,
           ),
-          SizedBox(
-            height: 150,
+          Expanded(flex: 1,
+            child: Row(mainAxisAlignment: MainAxisAlignment.center,crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                ElevatedButton(
+                    style: ButtonStyle(
+                        fixedSize: MaterialStatePropertyAll(Size(350, 50)),
+                        shape: MaterialStatePropertyAll(RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10))),
+                        backgroundColor: MaterialStatePropertyAll(Color(0xffA6A5EF))),
+                    onPressed: () {
+                      OnBordingScreen.prefs!.setBool("is_sign_up", true);
+                      OnBordingScreen.prefs!.setBool("is_login", true);
+                      Navigator.pushReplacement(
+                          context,
+                          PageTransition(
+                              duration: Duration(milliseconds: 500),
+                              child: Screen_1(),
+                              type: PageTransitionType.fade));
+                    },
+                    child: Text("Next",
+                        style: Theme.of(context)
+                            .textTheme
+                            .titleMedium!
+                            .copyWith(fontSize: 25, fontWeight: FontWeight.normal))),
+              ],
+            ),
           ),
-          ElevatedButton(
-              style: ButtonStyle(
-                  fixedSize: MaterialStatePropertyAll(Size(350, 50)),
-                  shape: MaterialStatePropertyAll(RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10))),
-                  backgroundColor: MaterialStatePropertyAll(Color(0xffA6A5EF))),
-              onPressed: () {
-                OnBordingScreen.prefs!.setBool("is_sign_up", true);
-                OnBordingScreen.prefs!.setBool("is_login", true);
-                Navigator.pushReplacement(
-                    context,
-                    PageTransition(
-                        duration: Duration(milliseconds: 500),
-                        child: Screen_1(),
-                        type: PageTransitionType.fade));
-              },
-              child: Text("Next",
-                  style: Theme.of(context)
-                      .textTheme
-                      .titleMedium!
-                      .copyWith(fontSize: 25, fontWeight: FontWeight.normal))),
           SizedBox(height: 30,)
         ],
       )),

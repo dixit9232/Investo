@@ -71,7 +71,7 @@ class _HoldingsState extends State<Holdings> {
               ),
               Text(
                 "Holdings Details",
-                style: Theme.of(context).textTheme.titleMedium,
+                style: Theme.of(context).textTheme.titleMedium!.copyWith(fontSize: 25),
               )
             ],
           ),
@@ -277,7 +277,7 @@ class _HoldingsState extends State<Holdings> {
                 padding: const EdgeInsets.all(20),
                 child: Text(
                   "Transactions",
-                  style: Theme.of(context).textTheme.titleMedium,
+                  style: Theme.of(context).textTheme.titleMedium!.copyWith(fontSize: 25),
                 ),
               ),
               Padding(
@@ -345,7 +345,7 @@ class _HoldingsState extends State<Holdings> {
                             style: Theme.of(context)
                                 .textTheme
                                 .titleMedium!
-                                .copyWith(fontSize: 25),
+                                .copyWith(fontSize: 22),
                           ),
                         )
                       ]),

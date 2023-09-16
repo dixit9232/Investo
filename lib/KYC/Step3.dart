@@ -30,6 +30,7 @@ class _Step3State extends State<Step3> {
             child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
+            SizedBox(height: 30,),
             Row(
               children: [
                 Padding(
@@ -51,7 +52,7 @@ class _Step3State extends State<Step3> {
                 ),
                 Text(
                   "Step 3",
-                  style: Theme.of(context).textTheme.titleMedium,
+                  style: Theme.of(context).textTheme.titleMedium!.copyWith(fontSize: 25),
                 )
               ],
             ),
@@ -64,11 +65,12 @@ class _Step3State extends State<Step3> {
                     style: Theme.of(context)
                         .textTheme
                         .displayLarge!
-                        .copyWith(fontSize: 40),
+                        .copyWith(fontSize: 35),
                   ),
                 )
               ],
             ),
+            SizedBox(height: 30,),
             Row(
               children: [
                 Padding(
@@ -81,6 +83,7 @@ investments done quickly.""",
                 )
               ],
             ),
+            SizedBox(height: 30,),
             Padding(
               padding: const EdgeInsets.all(10.0),
               child: Container(
@@ -181,6 +184,7 @@ investments done quickly.""",
                     )),
               ),
             ),
+            SizedBox(height: 30,),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -227,37 +231,40 @@ investments done quickly.""",
                                 fontSize: 25, fontWeight: FontWeight.normal)))
               ],
             ),
-            SizedBox(
-              height: 130,
+            Expanded(
+              child: Row(mainAxisAlignment: MainAxisAlignment.center,crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  ElevatedButton(
+                      style: ButtonStyle(
+                          fixedSize: MaterialStatePropertyAll(Size(350, 50)),
+                          shape: MaterialStatePropertyAll(RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10))),
+                          backgroundColor:
+                              MaterialStatePropertyAll(Color(0xffA6A5EF))),
+                      onPressed: () {
+                        if (ac_no.text != "" &&
+                            IFSC.text != "" &&
+                            name.text != "") {
+                          Navigator.pushReplacement(
+                              context,
+                              PageTransition(
+                                  duration: Duration(milliseconds: 500),
+                                  child: KYC_Done(),
+                                  type: PageTransitionType.fade));
+                        } else {
+                          Fluttertoast.showToast(
+                              msg: "Please fill all required fields");
+                        }
+                      },
+                      child: Text("Next",
+                          style: Theme.of(context)
+                              .textTheme
+                              .titleMedium!
+                              .copyWith(
+                                  fontSize: 25, fontWeight: FontWeight.normal))),
+                ],
+              ),
             ),
-            ElevatedButton(
-                style: ButtonStyle(
-                    fixedSize: MaterialStatePropertyAll(Size(350, 50)),
-                    shape: MaterialStatePropertyAll(RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10))),
-                    backgroundColor:
-                        MaterialStatePropertyAll(Color(0xffA6A5EF))),
-                onPressed: () {
-                  if (ac_no.text != "" &&
-                      IFSC.text != "" &&
-                      name.text != "") {
-                    Navigator.pushReplacement(
-                        context,
-                        PageTransition(
-                            duration: Duration(milliseconds: 500),
-                            child: KYC_Done(),
-                            type: PageTransitionType.fade));
-                  } else {
-                    Fluttertoast.showToast(
-                        msg: "Please fill all required fields");
-                  }
-                },
-                child: Text("Next",
-                    style: Theme.of(context)
-                        .textTheme
-                        .titleMedium!
-                        .copyWith(
-                            fontSize: 25, fontWeight: FontWeight.normal))),
             SizedBox(height: 30,)
           ],
         )),

@@ -52,6 +52,7 @@ var image;
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
+            SizedBox(height: 30,),
             Row(
               children: [
                 Padding(
@@ -71,6 +72,7 @@ var image;
                 ),
               ],
             ),
+            SizedBox(height: 30,),
             Row(
               children: [
                 Padding(
@@ -80,13 +82,13 @@ var image;
                     style: Theme.of(context)
                         .textTheme
                         .displayLarge!
-                        .copyWith(fontSize: 45),
+                        .copyWith(fontSize: 35),
                   ),
                 )
               ],
             ),
             SizedBox(
-              height: 20,
+              height: 50,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -106,92 +108,98 @@ var image;
                 )
               ],
             ),
-            SizedBox(
-              height: 100,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                OutlinedButton(
-                    style: ButtonStyle(
-                        fixedSize: MaterialStatePropertyAll(Size(350, 60)),
-                        side: MaterialStatePropertyAll(BorderSide(
-                            style: BorderStyle.solid, color: Colors.white))),
-                    onPressed: () {
-                      showDialog(
-                        context: context,
-                        builder: (context) {
-                          return AlertDialog(
-                            shadowColor: Colors.transparent,
-                            backgroundColor: Colors.transparent,
-                            actions: [
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  NeumorphicButton(
-                                      style: NeumorphicStyle(
-                                          color:
-                                              Theme.of(context).primaryColor),
-                                      onPressed: () {
-                                        getImage();
-                                        Navigator.pop(context);
-                                      },
-                                      child: Text(
-                                        "Cemera",
-                                        style: TextStyle(
-                                            fontSize: 20, color: Colors.white),
-                                      )),
-                                  NeumorphicButton(
-                                      style: NeumorphicStyle(
-                                          color:
-                                              Theme.of(context).primaryColor),
-                                      onPressed: () {
-                                        choose_image();
-                                        Navigator.pop(context);
-                                      },
-                                      child: Text("Gallery",
+            SizedBox(height: 100,),
+            Expanded(
+              child: Row(crossAxisAlignment: CrossAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  OutlinedButton(
+                      style: ButtonStyle(
+                          fixedSize: MaterialStatePropertyAll(Size(350, 50)),
+                          side: MaterialStatePropertyAll(BorderSide(
+                              style: BorderStyle.solid, color: Colors.white))),
+                      onPressed: () {
+                        showDialog(
+                          context: context,
+                          builder: (context) {
+                            return AlertDialog(
+                              shadowColor: Colors.transparent,
+                              backgroundColor: Colors.transparent,
+                              actions: [
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    NeumorphicButton(
+                                        style: NeumorphicStyle(
+                                            color:
+                                                Theme.of(context).primaryColor),
+                                        onPressed: () {
+                                          getImage();
+                                          Navigator.pop(context);
+                                        },
+                                        child: Text(
+                                          "Cemera",
                                           style: TextStyle(
-                                              fontSize: 20,
-                                              color: Colors.white))),
-                                ],
-                              ),
-                            ],
-                          );
-                        },
-                      );
-                    },
-                    child: Text("Take Another Photo",
-                        style: Theme.of(context)
-                            .textTheme
-                            .titleMedium!
-                            .copyWith(
-                                fontSize: 25, fontWeight: FontWeight.normal))),
-              ],
+                                              fontSize: 20, color: Colors.white),
+                                        )),
+                                    NeumorphicButton(
+                                        style: NeumorphicStyle(
+                                            color:
+                                                Theme.of(context).primaryColor),
+                                        onPressed: () {
+                                          choose_image();
+                                          Navigator.pop(context);
+                                        },
+                                        child: Text("Gallery",
+                                            style: TextStyle(
+                                                fontSize: 20,
+                                                color: Colors.white))),
+                                  ],
+                                ),
+                              ],
+                            );
+                          },
+                        );
+                      },
+                      child: Text("Take Another Photo",
+                          style: Theme.of(context)
+                              .textTheme
+                              .titleMedium!
+                              .copyWith(
+                                  fontSize: 25, fontWeight: FontWeight.normal))),
+                ],
+              ),
             ),
 
-            ElevatedButton(
-                style: ButtonStyle(
-                    fixedSize: MaterialStatePropertyAll(Size(350, 50)),
-                    shape: MaterialStatePropertyAll(RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10))),
-                    backgroundColor:
-                        MaterialStatePropertyAll(Color(0xffA6A5EF))),
-                onPressed: () {
-                  Navigator.pushReplacement(
-                      context,
-                      PageTransition(
-                          duration: Duration(milliseconds: 500),
-                          child: Step2(),
-                          type: PageTransitionType.fade));
-                },
-                child: Text(
-                  "Next",
-                  style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                      fontWeight: FontWeight.normal,
-                      color: Colors.white,
-                      fontSize: 25),
-                )),
+            Expanded(
+              child: Row(mainAxisAlignment: MainAxisAlignment.center,crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  ElevatedButton(
+                      style: ButtonStyle(
+                          fixedSize: MaterialStatePropertyAll(Size(350, 50)),
+                          shape: MaterialStatePropertyAll(RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10))),
+                          backgroundColor:
+                              MaterialStatePropertyAll(Color(0xffA6A5EF))),
+                      onPressed: () {
+                        Navigator.pushReplacement(
+                            context,
+                            PageTransition(
+                                duration: Duration(milliseconds: 500),
+                                child: Step2(),
+                                type: PageTransitionType.fade));
+                      },
+                      child: Text(
+                        "Next",
+                        style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                            fontWeight: FontWeight.normal,
+                            color: Colors.white,
+                            fontSize: 25),
+                      )),
+                ],
+              ),
+            ),
 SizedBox(height: 30,)
           ],
         ),

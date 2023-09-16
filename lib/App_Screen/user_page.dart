@@ -130,7 +130,7 @@ class _User_PageState extends State<User_Page> {
                               .of(context)
                               .textTheme
                               .titleMedium!
-                              .copyWith(fontSize: 20),
+                              .copyWith(fontSize: 18),
                               subtitle: sub_text[index]
                           ),
                         ),
